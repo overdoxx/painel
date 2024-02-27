@@ -3,7 +3,7 @@ const moment = require('moment');
 const cookieParser = require('cookie-parser');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Usar a porta fornecida pelo Replit ou a porta 3000 por padrão
 
 const ips = [];
 
@@ -58,5 +58,5 @@ app.get('/ips', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
